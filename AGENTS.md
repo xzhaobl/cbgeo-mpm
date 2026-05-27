@@ -27,6 +27,8 @@ Focus only on:
 9. ideas useful for a MATLAB minimal production MPM host;
 10. ideas that are too C++/HPC-specific and should not be copied.
 
+Also identify existing material models and benchmark tests that are useful as pressure tests for a MATLAB clean host, especially elastic, Mohr-Coulomb/Drucker-Prager, Modified Cam Clay, or other stateful geomechanics materials. Do not perform a full constitutive-model survey.
+
 ## Expected output
 
 Keep the audit concise. Return a high-level architecture report and a MATLAB design recommendation.
