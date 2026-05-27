@@ -1,19 +1,32 @@
 # AGENTS.md
 
-This repository is being audited only as a high-level architectural reference for building a MATLAB research-code MPM framework for geotechnical liquefaction modelling.
+This repository is being audited only at a high architectural level.
 
 Do not modify source code unless explicitly requested.
 
-Do not attempt to translate the C++ code into MATLAB.
+Do not translate C++ code into MATLAB.
+
+Do not focus on CMake, MPI, Docker, HDF5, or low-level HPC implementation details unless they directly affect the MATLAB architecture decision.
+
+## Project context
+
+The goal is to rebuild a clean MATLAB minimal production MPM host for geotechnical liquefaction modelling. The previous self-developed slope driver failed because of geostatic equilibrium, force-balance, internal-force assembly, low-mass node, and boundary/runout issues.
+
+## Audit focus
 
 Focus only on:
 
 1. overall MPM solver architecture;
-2. particle, mesh, material, solver, and IO separation;
-3. material model interface and history variable storage;
-4. test and benchmark organisation;
-5. JSON/input-file design ideas;
-6. whether any design is useful for a MATLAB u-p MPM framework with a Liao-type cyclic liquefaction constitutive model;
-7. which ideas are too C++/HPC/MPI-specific and should not be copied into MATLAB.
+2. separation of particles, mesh/nodes, materials, solvers, constraints, and IO;
+3. material model interface;
+4. particle state/history variable storage;
+5. validation and test organisation;
+6. input-file or JSON design ideas;
+7. force-balance and geostatic-equilibrium testing ideas;
+8. boundary and constraint organisation;
+9. ideas useful for a MATLAB minimal production MPM host;
+10. ideas that are too C++/HPC-specific and should not be copied.
 
-Keep the audit concise and avoid deep CMake, MPI, HDF5, or Docker details unless they affect the MATLAB architecture decision.
+## Expected output
+
+Keep the audit concise. Return a high-level architecture report and a MATLAB design recommendation.
